@@ -38,7 +38,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    value.length;
+    return value.length;
 }
 
 /**
@@ -145,7 +145,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    return str.substring(str.indexOf('<'), str.lastIndexOf('>') + 1);
+    return str.substring(str.indexOf('<') + 1, str.lastIndexOf('>'));
 }
 
 
@@ -160,7 +160,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+    return str.toUpperCase();
 }
 
 /**
@@ -174,7 +174,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+    return str.split(';');
 }
 
 /**
@@ -201,7 +201,22 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+    var str = '';
+    for (var i; i < width; i++) {
+        str = str.concat('-');
+    }
+    str = str.concat('\n');
+    for (var i; i < width; i++) {
+        str = str.concat('|');
+        for (var j; j < height - 2; j++) {
+            str = str.concat(' ');
+        }
+        str = str.concat('|\n');
+    }
+    for (var i; i < width; i++) {
+        str = str.concat('-');
+    }
+    str = str.concat('\n');
 }
 
 

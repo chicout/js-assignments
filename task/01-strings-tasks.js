@@ -201,22 +201,9 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    var str = '';
-    for (var i; i < width; i++) {
-        str = str.concat('-');
-    }
-    str = str.concat('\n');
-    for (var i; i < width; i++) {
-        str = str.concat('|');
-        for (var j; j < height - 2; j++) {
-            str = str.concat(' ');
-        }
-        str = str.concat('|\n');
-    }
-    for (var i; i < width; i++) {
-        str = str.concat('-');
-    }
-    str = str.concat('\n');
+    return '┌' + '─'.repeat(width - 2) + '┐' + '\n'
+        + ('│' + ' '.repeat(width - 2) + '│' + '\n').repeat(height - 2)
+        + '└' + '─'.repeat(width - 2) + '┘' + '\n';
 }
 
 

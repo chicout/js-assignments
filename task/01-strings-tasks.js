@@ -22,7 +22,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    Return value1 + value1;
+    return value1 + value1;
 }
 
 

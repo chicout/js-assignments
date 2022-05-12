@@ -285,7 +285,11 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+    var cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+    var signs = ['♣', '♦', '♥', '♠'];
+    var cardChar = value.substring(0, value.length - 1);
+    var signChar = value.substring(value.length - 1, value.length);
+    return cards.indexOf(cardChar) + cards.length * signs.indexOf(signChar);
 }
 
 

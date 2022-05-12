@@ -223,7 +223,23 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    var low = 'abcdefghijklmnopqrstuvwxyz';
+    var up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    
+    var encodedStr = '';
+    for (var i = 0; i < str.length; i++) {
+        var char = str.charAt(i);
+        var index;
+        if ((index = up.indexOf(char)) !== -1) {
+            encodedStr += up.charAt((index + 13) % 26);
+        } else if ((index = low.indexOf(char)) !== -1) {
+            encodedStr += low.charAt((index + 13) % 26);
+        } else {
+            encodedStr += char;
+        }
+    }
+
+    return encodedStr;
 }
 
 /**
@@ -240,7 +256,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    return typeof value === "string" || value instanceof String;
 }
 
 

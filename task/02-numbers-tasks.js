@@ -54,7 +54,7 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    return (value1 + value2)/ 2;
+    return value1 / 2 + value2/ 2;
 }
 
 /**
@@ -204,8 +204,8 @@ function roundToPowerOfTen(num, pow) {
  */
 function isPrime(n) {
     for(let i = 2, sq = Math.sqrt(n); i <= sq; i++)
-        if(num % i === 0) return false; 
-    return num > 1;
+        if(n % i === 0) return false; 
+    return n > 1;
 
 }
 

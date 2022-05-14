@@ -241,7 +241,7 @@ function getMovingSum(arr) {
       } else {
          sum[i] = el + sum[i - 1];
       }
-      return acc;
+      return sum;
    }, []);
 }
 

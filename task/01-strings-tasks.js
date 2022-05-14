@@ -223,13 +223,13 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    var low = 'abcdefghijklmnopqrstuvwxyz';
-    var up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let low = 'abcdefghijklmnopqrstuvwxyz';
+    let up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     
-    var encodedStr = '';
-    for (var i = 0; i < str.length; i++) {
-        var char = str.charAt(i);
-        var index;
+    let encodedStr = '';
+    for (let i = 0; i < str.length; i++) {
+        let char = str.charAt(i);
+        let index;
         if ((index = up.indexOf(char)) !== -1) {
             encodedStr += up.charAt((index + 13) % 26);
         } else if ((index = low.indexOf(char)) !== -1) {
@@ -285,10 +285,10 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    var cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-    var signs = ['♣', '♦', '♥', '♠'];
-    var cardChar = value.substring(0, value.length - 1);
-    var signChar = value.substring(value.length - 1, value.length);
+    let cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+    let signs = ['♣', '♦', '♥', '♠'];
+    let cardChar = value.substring(0, value.length - 1);
+    let signChar = value.substring(value.length - 1, value.length);
     return cards.indexOf(cardChar) + cards.length * signs.indexOf(signChar);
 }
 

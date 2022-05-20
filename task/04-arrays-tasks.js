@@ -437,7 +437,15 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
 function sortCitiesArray(arr) {
-   throw new Error('Not implemented');
+   return arr.sort((a, b) => {
+
+      if (a.country < b.country) return -1;
+      if (a.country > b.country) return 1;
+      if (a.city < b.city) return -1;
+      if (a.city > b.city) return 1;
+      
+      return 0;
+   });
 }
 
 /**
@@ -459,7 +467,12 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-   throw new Error('Not implemented');
+   return new Array(n).fill(0)
+       .map((e, i) => {
+          let arr = new Array(n).fill(0);
+          arr[i] = 1;
+          return arr;
+       });
 }
 
 /**
@@ -476,7 +489,7 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-   throw new Error('Not implemented');
+   return new Array(end - start + 1).fill(0).map((el, i) => start + i);
 }
 
 /**

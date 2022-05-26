@@ -36,7 +36,7 @@ function getFizzBuzz(num) {
     }
     if (num % 5 === 0) {
         res += 'Buzz';
-    S}
+    }
     return result || num;
 }
 
@@ -74,8 +74,9 @@ function getFactorial(n) {
  */
 function getSumBetweenNumbers(n1, n2) {
     let res = 0;
-    for (let i = n1; i <= n2; i++)
+    for (let i = n1; i <= n2; i++) {
         res += i;
+    }
     return result;
 }
 
@@ -244,7 +245,7 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    return Number(String(num).split('').reverse().join(''));
 }
 
 
@@ -374,7 +375,7 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-    throw new Error('Not implemented');
+    return num.toString(n);
 }
 
 

@@ -124,6 +124,7 @@ function retry(func, attempts) {
                 }
             }
         }
+    }
 }
 
 

@@ -37,7 +37,7 @@ function getFizzBuzz(num) {
     if (num % 5 === 0) {
         res += 'Buzz';
     }
-    return result || num;
+    return res || num;
 }
 
 
@@ -77,7 +77,7 @@ function getSumBetweenNumbers(n1, n2) {
     for (let i = n1; i <= n2; i++) {
         res += i;
     }
-    return result;
+    return res;
 }
 
 

@@ -31,10 +31,12 @@
  */
 function getFizzBuzz(num) {
     let res = '';
-    if (num % 3 === 0) 
-        res += 'Fizz'
-    if (num % 5 === 0)
-        res += 'Buzz'
+    if (num % 3 === 0) {
+        res += 'Fizz';
+    }
+    if (num % 5 === 0) {
+        res += 'Buzz';
+    S}
     return result || num;
 }
 
@@ -51,8 +53,9 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    if (n === 1)
+    if (n === 1) {
         return 1;
+    }
     return getFactorial(n - 1) * n;
 }
 

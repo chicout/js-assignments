@@ -170,7 +170,10 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn) {
-    throw new Error('Not implemented');
+    let rest = [...arguments].slice(1);
+    return function() {
+        return fn.apply(this, [... rest, ...arguments]);
+    }
 }
 
 

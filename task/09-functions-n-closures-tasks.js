@@ -26,7 +26,7 @@
  *
  */
 function getComposition(f,g) {
-    throw new Error('Not implemented');
+    return (x) => f(g(x));
 }
 
 
@@ -47,7 +47,7 @@ function getComposition(f,g) {
  *
  */
 function getPowerFunction(exponent) {
-    throw new Error('Not implemented');
+    return (x) => Math.pow(x, exponent);
 }
 
 
@@ -65,7 +65,17 @@ function getPowerFunction(exponent) {
  *   getPolynom()      => null
  */
 function getPolynom() {
-    throw new Error('Not implemented');
+    let coefficients = [...arguments].reverse();
+    return (x) => {
+        let result = null;
+        if (coefficients.length) {
+            result = 0;
+            for (let i = 0; i < coefficients.length; i++) {
+                result += coefficients[i] * Math.pow(x, i);
+            }
+        }
+        return result;
+    }
 }
 
 
